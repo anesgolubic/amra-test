@@ -32,7 +32,7 @@ df = services.query('Servis == "'+str(kategorija)+'" & Users == "'+str(users)+'"
 st.write(df)
 
 
-dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata)
+dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata')
 
 """
 ## Lista potrebnih dokumenata
