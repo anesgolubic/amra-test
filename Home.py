@@ -10,6 +10,9 @@ import pandas as pd
 from datetime import date, timedelta
 import numpy as np
 
+# LINK TO THE CSS FILE
+with open('style.css')as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
 """
 # Amra test
@@ -32,9 +35,10 @@ df = services.query('Servis == "'+str(kategorija)+'" & Users == "'+str(users)+'"
 st.write(df)
 
 true_html = '<input type="checkbox" checked disabled="true">'
-false_html = '<input type="checkbox" disabled="true">'
 
-st.markdown(true_html, unsafe_allow_html=True)
+test = '<section class="blog-card"><div class="blog-content"><p class="blog-label">Technology</p><h1>Lorem ipsum dolor sit amet.</h1><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem aliquid sunt temporibus repellendus neque, quibusdam exercitationem.</p></div></section>'
+
+st.markdown(test, unsafe_allow_html=True)
 
 
 dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata', skiprows = range(1, 8), header = 1)
