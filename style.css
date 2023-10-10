@@ -5,7 +5,6 @@ html {
 
 body {
   margin: 0;
-  font-family: "Lucida Sans Unicode", sans-serif;
   display: grid;
   text-align: left;
   font-size: 0.8rem;
@@ -66,10 +65,4 @@ font-style: italic;
   color: white;
   border-radius: 15px;
   padding: 0 1rem;
-}
-
-@media (min-width: 48rem) {
-  .blog-card {
-    max-width: 30%;
-  }
 }
