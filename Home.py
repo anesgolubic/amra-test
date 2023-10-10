@@ -38,4 +38,4 @@ dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih
 ## Lista potrebnih dokumenata
 """
 
-st.write(dokumenti)
+st.dataframe(dokumenti)
