@@ -36,18 +36,13 @@ st.write(df)
 
 true_html = '<input type="checkbox" checked disabled="true">'
 
-test = '<section class="blog-card"><div class="blog-content"><p class="blog-label">Technology</p><h1>Lorem ipsum dolor sit amet.</h1><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem aliquid sunt temporibus repellendus neque, quibusdam exercitationem.</p></div></section>'
+for index, row in df.iterrows():
+    st.markdown('<p class="blog-label">'+str(row['Servis'])+'</p>', unsafe_allow_html=True)
+    st.markdown('<p class="blog-label">'+str(row['Age'])+'</p>', unsafe_allow_html=True)
+    st.markdown('<p class="blog-label">'+str(row['Users'])+'</p>', unsafe_allow_html=True)
+    st.markdown('<h1>'+str(row['Name'])+'</h1>', unsafe_allow_html=True)
+    st.markdown('<p>'+str(row['Description'])+'</p>', unsafe_allow_html=True)
 
-st.markdown(test, unsafe_allow_html=True)
-
-st.markdown('<section class="blog-card">', unsafe_allow_html=True)
-
-st.markdown('<div class="blog-content">', unsafe_allow_html=True)
-st.markdown('<p class="blog-label">Technology</p>', unsafe_allow_html=True)
-st.markdown('<h1>Lorem ipsum dolor sit amet.</h1>', unsafe_allow_html=True)
-st.markdown('<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem aliquid sunt temporibus repellendus neque, quibusdam exercitationem.</p>', unsafe_allow_html=True)
-st.markdown('</div>', unsafe_allow_html=True)
-st.markdown('</section>', unsafe_allow_html=True)
 
 
 dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata', skiprows = range(1, 8), header = 1)
