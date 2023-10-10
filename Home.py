@@ -31,6 +31,11 @@ with col2:
 df = services.query('Servis == "'+str(kategorija)+'" & Users == "'+str(users)+'"')
 st.write(df)
 
+true_html = '<input type="checkbox" checked disabled="true">'
+false_html = '<input type="checkbox" disabled="true">'
+
+st.markdown(true_html, unsafe_allow_html=True)
+
 
 dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata', skiprows = range(1, 8), header = 1)
 
