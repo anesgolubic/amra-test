@@ -23,16 +23,16 @@ useri =  services['Users'].unique()
 
 col1, col2 = st.columns(2)
 with col1:
-    kategorija = st.multiselect('Odaberite kategoriju usluge/prava/benefita:',lista_usluga)
+    kategorija = st.selectbox('Odaberite kategoriju usluge/prava/benefita:',lista_usluga)
 
 with col2:
-    users = st.multiselect('Odaberite kategoriju korisnika:',useri)
+    users = st.selectbox('Odaberite kategoriju korisnika:',useri)
 
 df = services.query('Servis == "'+str(kategorija)+'" & Users == "'+str(users)+'"')
 st.write(df)
 
 
-dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata')
+dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata', skiprows = range(1, 9))
 
 """
 ## Lista potrebnih dokumenata
