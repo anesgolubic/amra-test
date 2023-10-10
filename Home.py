@@ -37,8 +37,8 @@ st.write(df)
 true_html = '<input type="checkbox" checked disabled="true">'
 
 for index, row in df.iterrows():
-    st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Servis'])+'</p>', unsafe_allow_html=True)
-    st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Age'])+'</p>', unsafe_allow_html=True)
+    st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Servis'])+'</p><p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Age'])+'</p>', unsafe_allow_html=True)
+    #st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Age'])+'</p>', unsafe_allow_html=True)
     st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Users'])+'</p>', unsafe_allow_html=True)
     st.markdown('<h3>'+str(row['Name'])+'</h3>', unsafe_allow_html=True)
     st.markdown('<p>'+str(row['Description'])+'</p>', unsafe_allow_html=True)
