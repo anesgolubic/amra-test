@@ -40,6 +40,15 @@ test = '<section class="blog-card"><div class="blog-content"><p class="blog-labe
 
 st.markdown(test, unsafe_allow_html=True)
 
+st.markdown('<section class="blog-card">', unsafe_allow_html=True)
+
+st.markdown('<div class="blog-content">', unsafe_allow_html=True)
+st.markdown('<p class="blog-label">Technology</p>', unsafe_allow_html=True)
+st.markdown('<h1>Lorem ipsum dolor sit amet.</h1>', unsafe_allow_html=True)
+st.markdown('<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem aliquid sunt temporibus repellendus neque, quibusdam exercitationem.</p>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
+st.markdown('</section>', unsafe_allow_html=True)
+
 
 dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata', skiprows = range(1, 8), header = 1)
 
