@@ -56,8 +56,7 @@ for index, row in df.iterrows():
 
     if modal.is_open():
         with modal.container():
-            st.write("Text goes here")
-
+            
             html_string = '''
             <h3>Ministarstvo za rad, socijalnu politiku, raseljena lica i izbjeglice</h3>
             <p>Reisa Džemaludina Čauševića 1</p>
