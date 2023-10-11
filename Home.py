@@ -59,22 +59,26 @@ for index, row in df.iterrows():
     if modal.is_open():
         with modal.container():
 
-            html_string = '''
-            <h3>Ministarstvo za rad, socijalnu politiku, raseljena lica i izbjeglice</h3>
-            <p>Reisa Džemaludina Čauševića 1</p>
-            <p>033/723-635</p>
-            <p>mirsada@kcsr.ba</p>
-            <a href="https://mrsri.ks.gov.ba/">Website</a>
-            '''
-            components.html(html_string)
+            col3, col4 = st.columns(2)
+            with col3:
+                html_string = '''
+                <h3>Ministarstvo za rad, socijalnu politiku, raseljena lica i izbjeglice</h3>
+                <p>Reisa Džemaludina Čauševića 1</p>
+                <p>033/723-635</p>
+                <p>mirsada@kcsr.ba</p>
+                <a href="https://mrsri.ks.gov.ba/">Website</a>
+                '''
+                components.html(html_string)
 
-            m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-            folium.Marker(
-                [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
-            ).add_to(m)
 
-            # call to render Folium map in Streamlit
-            st_data = st_folium(m, width=350)
+            with col4:
+                m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+                folium.Marker(
+                    [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
+                ).add_to(m)
+
+                # call to render Folium map in Streamlit
+                st_data = st_folium(m, height=350, width=350)
 
     st.divider()
 
