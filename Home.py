@@ -66,9 +66,9 @@ for index, row in df.iterrows():
                 <p>Reisa Džemaludina Čauševića 1</p>
                 <p>033/723-635</p>
                 <p>mirsada@kcsr.ba</p>
-                <a href="https://mrsri.ks.gov.ba/">Website</a>
                 '''
                 components.html(html_string)
+                st.link_button("Website", "https://mrsri.ks.gov.ba/")
 
 
             with col4:
