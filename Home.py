@@ -36,7 +36,7 @@ with col2:
     users = st.selectbox('Odaberite kategoriju korisnika:',useri)
 
 df = services.query('Servis == "'+str(kategorija)+'" & Users == "'+str(users)+'"')
-st.write(df)
+#st.write(df)
 
 true_html = '<input type="checkbox" checked disabled="true">'
 
