@@ -67,6 +67,7 @@ for index, row in df.iterrows():
             '''
             components.html(html_string)
 
+    st.divider()
 dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata', skiprows = range(1, 8), header = 1)
 
 """
