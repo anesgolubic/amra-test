@@ -2,3 +2,4 @@ altair
 pandas
 streamlit
 openpyxl
+st_pop_up_component

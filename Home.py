@@ -2,11 +2,12 @@ import streamlit as st
 st.set_page_config(
     page_title="Amra test",
     #page_icon="🧊",
-    #layout="wide",
+    layout="wide",
     initial_sidebar_state="expanded",
 )
 
 import pandas as pd
+import st_pop_up_component as sp
 from datetime import date, timedelta
 import numpy as np
 
@@ -42,6 +43,9 @@ for index, row in df.iterrows():
     #st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Users'])+'</p>', unsafe_allow_html=True)
     st.markdown('<h3>'+str(row['Name'])+'</h3>', unsafe_allow_html=True)
     st.markdown('<p>'+str(row['Description'])+'</p>', unsafe_allow_html=True)
+    st.divider()
+    st.write('Government Agency/Organization')
+    st.markdown('<h4>'+str(row['Government Agency/Organization'])+'</h3>', unsafe_allow_html=True)
 
 
 
