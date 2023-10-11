@@ -9,8 +9,10 @@ st.set_page_config(
 import pandas as pd
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
-from datetime import date, timedelta
-import numpy as np
+import folium
+from streamlit_folium import st_folium, folium_static
+#from datetime import date, timedelta
+#import numpy as np
 
 # LINK TO THE CSS FILE
 with open('style.css')as f:
@@ -56,7 +58,7 @@ for index, row in df.iterrows():
 
     if modal.is_open():
         with modal.container():
-            
+
             html_string = '''
             <h3>Ministarstvo za rad, socijalnu politiku, raseljena lica i izbjeglice</h3>
             <p>Reisa Džemaludina Čauševića 1</p>

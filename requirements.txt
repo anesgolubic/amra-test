@@ -3,3 +3,5 @@ pandas
 streamlit
 openpyxl
 streamlit_modal
+streamlit-folium
+folium
