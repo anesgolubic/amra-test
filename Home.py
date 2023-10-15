@@ -79,7 +79,7 @@ for index, row in df.iterrows():
                 <p>'''+str(row['Vremenski okvir'])+'''</p>
                 <p>'''+str(row['Dodatne napomene'])+'''</p>
                 '''
-        components.html(html_string)
+        components.html(html_string, width=None, height=None, scrolling=False)
         #st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
     #st.divider()
