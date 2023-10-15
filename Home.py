@@ -52,35 +52,26 @@ for index, row in df.iterrows():
     #st.write('Government Agency/Organization')
     #st.markdown('<h4>'+str(row['Government Agency/Organization'])+'</h3>', unsafe_allow_html=True)
 
-
-    modal = Modal(key=row['Servis'], title="Government Agency/Organization")
-    open_modal = st.button("Ministartvo/Organizacija")
-    if open_modal:
-        modal.open()
-
-    if modal.is_open():
-        with modal.container():
-
-            col3, col4 = st.columns(2)
-            with col3:
-                html_string = '''
+    col3, col4 = st.columns(2)
+    with col3:
+        html_string = '''
                 <h3>'''+row['Ministartvo/Organ izacija']+'''</h3>
                 <p>'''+row['Adresa']+'''</p>
                 <p>'''+row['Telefon']+'''</p>
                 <p>'''+row['Email']+'''</p>
                 '''
-                components.html(html_string)
-                st.link_button("Website", row['Web stranica'])
+        components.html(html_string)
+        st.link_button("Website", row['Web stranica'])
 
 
-            with col4:
-                m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-                folium.Marker(
-                    [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
-                ).add_to(m)
+    with col4:
+        m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+        folium.Marker(
+            [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
+        ).add_to(m)
 
-                # call to render Folium map in Streamlit
-                st_data = st_folium(m, height=350, width=350)
+        # call to render Folium map in Streamlit
+        st_data = st_folium(m, height=350, width=350)
 
     st.divider()
 
