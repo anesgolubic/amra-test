@@ -54,6 +54,8 @@ for index, row in df.iterrows():
 
     col3, col4 = st.columns(2)
     with col3:
+        st.write('<p style="font-size:18px;"><b>Ministarstvo/Organizacija</b></p>',
+                 unsafe_allow_html=True)
         st.write(row['Ministartvo/Organ izacija'])
         st.write(row['Adresa'])
         st.write(row['Telefon'])
