@@ -25,13 +25,13 @@ with open('style.css')as f:
 
 services = pd.read_excel('mapiranje_usluga.xlsx',sheet_name='Mapiranje usluga')
 st.write(services)
-services['Servis'] = services['Type of Service/Right/Benefit']
+services['Servis'] = services['Tip usluge/prava/benefita']
 lista_usluga = services['Servis'].unique()
-useri =  services['Users'].unique()
+useri =  services['Korisnici'].unique()
 
 col1, col2 = st.columns(2)
 with col1:
-    kategorija = st.selectbox('Odaberite kategoriju usluge/prava/benefita:',lista_usluga)
+    kategorija = st.selectbox('Odaberite Tip usluge/prava/benefita:',lista_usluga)
 
 with col2:
     users = st.selectbox('Odaberite kategoriju korisnika:',useri)
