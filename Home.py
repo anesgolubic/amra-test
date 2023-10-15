@@ -73,12 +73,17 @@ for index, row in df.iterrows():
         st.write(str(row['Proces aplikacije']))
         st.write(str(row['Lista neophodnih dokumenata']))
         st.write(str(row['Vremenski okvir']))
-        if row['Dodatne napomene'].isnull():
-            if str(row['Link za informacije o prijavi']).isnull():
+        st.write('provjera da li je dodatna napomena prazna.')
+        if row['Dodatne napomene'].isnull() == True:
+            st.write('Dodatna napomena prazna. Provjera da li je link praza.+n.')
+            if str(row['Link za informacije o prijavi']).isnull() == True:
+                st.write('Link prazan. Ne printa se ništa')
                 pass
             else:
+                st.write('Link nije prazan. Printa se link.')
                 st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
         else:
+            st.write('Ni link ni napomena nisu prazen, printa se oboje')
             st.write(str(row['Dodatne napomene']))
             st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
