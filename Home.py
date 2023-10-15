@@ -71,6 +71,8 @@ for index, row in df.iterrows():
     with col4:
         st.write('<p style="font-size:26px;">Proces aplikacije i potrebni dokumenti</p>',
                  unsafe_allow_html=True)
+        st.write('<p style="font-size:26px; color:red;">Here is some red text</p>',
+                 unsafe_allow_html=True)
         st.write(str(row['Proces aplikacije']))
         st.write('Neophodna lista dokumenata: '+str(row['Lista neophodnih dokumenata']))
         st.write('Vremenski okvir: '+str(row['Vremenski okvir']))
