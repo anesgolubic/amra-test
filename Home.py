@@ -80,6 +80,7 @@ for index, row in df.iterrows():
                 <p>'''+str(row['Dodatne napomene'])+'''</p>
                 '''
         st.components.v1.html(html_string, width=None, height=None, scrolling=False)
+        st.write(str(row['Proces aplikacije']))
         #st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
     #st.divider()
