@@ -73,6 +73,7 @@ for index, row in df.iterrows():
 
     with col4:
         html_string = '''
+                <h3>Proces aplikacije i potrebni dokumenti</h3>
                 <p>'''+str(row['Proces aplikacije'])+'''</p>
                 <p>'''+str(row['Lista neophodnih dokumenata'])+'''</p>
                 <p>'''+str(row['Vremenski okvir'])+'''</p>
