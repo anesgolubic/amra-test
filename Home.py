@@ -71,8 +71,13 @@ for index, row in df.iterrows():
     with col4:
         st.write('Proces aplikacije i potrebni dokumenti')
         st.write(str(row['Proces aplikacije']))
-        st.write(str(row['Lista neophodnih dokumenata']))
-        st.write(str(row['Vremenski okvir']))
+        st.write('Neophodna lista dokumenata: '+str(row['Lista neophodnih dokumenata']))
+        st.write('Vremenski okvir: '+str(row['Vremenski okvir']))
+
+
+
+
+
         st.write('provjera da li je dodatna napomena prazna.')
         if str(row['Dodatne napomene']).isnull() == True:
             st.write('Dodatna napomena prazna. Provjera da li je link praza.+n.')
