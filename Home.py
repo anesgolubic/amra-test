@@ -73,7 +73,10 @@ for index, row in df.iterrows():
         st.write(str(row['Proces aplikacije']))
         st.write(str(row['Lista neophodnih dokumenata']))
         st.write(str(row['Vremenski okvir']))
-        st.write(str(row['Dodatne napomene']))
+        if row['Dodatne napomene'].isnull():
+            pass
+        else:
+            st.write(str(row['Dodatne napomene']))
         st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
     st.divider()
