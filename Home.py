@@ -54,13 +54,10 @@ for index, row in df.iterrows():
 
     col3, col4 = st.columns(2)
     with col3:
-        html_string = '''
-                <h3>'''+row['Ministartvo/Organ izacija']+'''</h3>
-                <p>'''+row['Adresa']+'''</p>
-                <p>'''+row['Telefon']+'''</p>
-                <p>'''+row['Email']+'''</p>
-                '''
-        components.html(html_string)
+        st.write(row['Ministartvo/Organ izacija'])
+        st.write(row['Adresa'])
+        st.write(row['Telefon'])
+        st.write(row['Email'])
         st.link_button("Website", row['Web stranica'])
 
         m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
@@ -80,4 +77,4 @@ for index, row in df.iterrows():
         st.write(str(row['Dodatne napomene']))
         st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
-    #st.divider()
+    st.divider()
