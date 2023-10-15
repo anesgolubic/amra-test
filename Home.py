@@ -82,4 +82,4 @@ for index, row in df.iterrows():
         components.html(html_string)
         #st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
-    st.divider()
+    #st.divider()
