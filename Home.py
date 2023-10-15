@@ -73,8 +73,8 @@ for index, row in df.iterrows():
         st.write(str(row['Proces aplikacije']))
         st.write('Neophodna lista dokumenata: '+str(row['Lista neophodnih dokumenata']))
         st.write('Vremenski okvir: '+str(row['Vremenski okvir']))
-
-
+        st.write('Dodatne napomene: '+str(row['Dodatne napomene']))
+        st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
 
 
