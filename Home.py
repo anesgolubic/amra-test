@@ -74,7 +74,7 @@ for index, row in df.iterrows():
         st.write(str(row['Lista neophodnih dokumenata']))
         st.write(str(row['Vremenski okvir']))
         st.write('provjera da li je dodatna napomena prazna.')
-        if row['Dodatne napomene'].isnull() == True:
+        if str(row['Dodatne napomene']).isnull() == True:
             st.write('Dodatna napomena prazna. Provjera da li je link praza.+n.')
             if str(row['Link za informacije o prijavi']).isnull() == True:
                 st.write('Link prazan. Ne printa se ništa')
