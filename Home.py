@@ -62,13 +62,13 @@ for index, row in df.iterrows():
         st.write(row['Email'])
         st.link_button("Website", row['Web stranica'])
 
-        m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
-        folium.Marker(
-            [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
-        ).add_to(m)
+        #m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+        #folium.Marker(
+           #[39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
+        #).add_to(m)
 
         # call to render Folium map in Streamlit
-        st_data = st_folium(m, height=350, width=350)
+        #st_data = st_folium(m, height=350, width=350)
 
     with col4:
         st.write('<p style="font-size:18px;"><b>Proces aplikacije i potrebni dokumenti</b></p>',
