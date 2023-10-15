@@ -40,7 +40,7 @@ df = services.query('Servis == "'+str(kategorija)+'" & Korisnici == "'+str(users
 #st.write(df)
 
 true_html = '<input type="checkbox" checked disabled="true">'
-
+st.divider()
 for index, row in df.iterrows():
     st.markdown('<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Servis'])+'</p><p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Korisnici'])+'<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Godine'])+'</p>', unsafe_allow_html=True)
     #st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Age'])+'</p>', unsafe_allow_html=True)
@@ -75,22 +75,4 @@ for index, row in df.iterrows():
         st.write('Vremenski okvir: '+str(row['Vremenski okvir']))
         st.write('Dodatne napomene: '+str(row['Dodatne napomene']))
         st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
-
-
-
-        st.write('provjera da li je dodatna napomena prazna.')
-        if str(row['Dodatne napomene']).isnull() == True:
-            st.write('Dodatna napomena prazna. Provjera da li je link praza.+n.')
-            if str(row['Link za informacije o prijavi']).isnull() == True:
-                st.write('Link prazan. Ne printa se ništa')
-                pass
-            else:
-                st.write('Link nije prazan. Printa se link.')
-                st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
-        else:
-            st.write('Ni link ni napomena nisu prazen, printa se oboje')
-            st.write(str(row['Dodatne napomene']))
-            st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
-
-
     st.divider()
