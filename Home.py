@@ -47,6 +47,7 @@ for index, row in df.iterrows():
     #st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Users'])+'</p>', unsafe_allow_html=True)
     st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
     st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
+    st.markdown('<p>Pravni osnov:<br>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
     #st.divider()
     #st.write('Government Agency/Organization')
     #st.markdown('<h4>'+str(row['Government Agency/Organization'])+'</h3>', unsafe_allow_html=True)
