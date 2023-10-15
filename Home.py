@@ -69,9 +69,7 @@ for index, row in df.iterrows():
         st_data = st_folium(m, height=350, width=350)
 
     with col4:
-        st.write('<p style="font-size:26px;">Proces aplikacije i potrebni dokumenti</p>',
-                 unsafe_allow_html=True)
-        st.write('<p style="font-size:26px; color:red;">Here is some red text</p>',
+        st.write('<p style="font-size:18px;"><b>Proces aplikacije i potrebni dokumenti</b></p>',
                  unsafe_allow_html=True)
         st.write(str(row['Proces aplikacije']))
         st.write('Neophodna lista dokumenata: '+str(row['Lista neophodnih dokumenata']))
