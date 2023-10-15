@@ -72,15 +72,12 @@ for index, row in df.iterrows():
         st_data = st_folium(m, height=350, width=350)
 
     with col4:
-        html_string = '''
-                <h3>Proces aplikacije i potrebni dokumenti</h3>
-                <p>'''+str(row['Proces aplikacije'])+'''</p>
-                <p>'''+str(row['Lista neophodnih dokumenata'])+'''</p>
-                <p>'''+str(row['Vremenski okvir'])+'''</p>
-                <p>'''+str(row['Dodatne napomene'])+'''</p>
-                '''
         st.components.v1.html(html_string, width=None, height=None, scrolling=False)
+        st.write('Proces aplikacije i potrebni dokumenti')
         st.write(str(row['Proces aplikacije']))
-        #st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
+        st.write(str(row['Lista neophodnih dokumenata']))
+        st.write(str(row['Vremenski okvir']))
+        st.write(str(row['Dodatne napomene']))
+        st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
     #st.divider()
