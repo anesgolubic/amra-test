@@ -65,12 +65,12 @@ for index, row in df.iterrows():
             with col3:
                 html_string = '''
                 <h3>'''+row['Ministartvo/Organ izacija']+'''</h3>
-                <p>Reisa Džemaludina Čauševića 1</p>
-                <p>033/723-635</p>
-                <p>mirsada@kcsr.ba</p>
+                <p>'''+row['Adresa']+'''</p>
+                <p>'''+row['Telefon']+'''</p>
+                <p>'''+row['Email']+'''</p>
                 '''
                 components.html(html_string)
-                st.link_button("Website", "https://mrsri.ks.gov.ba/")
+                st.link_button("Website", row['Web stranica'])
 
 
             with col4:
