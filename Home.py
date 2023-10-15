@@ -75,7 +75,7 @@ for index, row in df.iterrows():
         html_string = '''
                 <p>'''+row['Proces aplikacije']+'''</p>
                 <p>'''+row['Lista neophodnih dokumenata']+'''</p>
-                <p>'''+row['Vremenski okvir']+'''</p>
+                <p>'''+str(row['Vremenski okvir'])+'''</p>
                 <p>'''+row['Dodatne napomene']+'''</p>
                 '''
         components.html(html_string)
