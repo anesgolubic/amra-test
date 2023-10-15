@@ -42,18 +42,18 @@ df = services.query('Servis == "'+str(kategorija)+'" & Users == "'+str(users)+'"
 true_html = '<input type="checkbox" checked disabled="true">'
 
 for index, row in df.iterrows():
-    st.markdown('<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Servis'])+'</p><p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Users'])+'<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Age'])+'</p>', unsafe_allow_html=True)
+    st.markdown('<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Servis'])+'</p><p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Korisnici'])+'<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Godine'])+'</p>', unsafe_allow_html=True)
     #st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Age'])+'</p>', unsafe_allow_html=True)
     #st.markdown('<p style="margin:0;display:inline;float:left" class="blog-label">'+str(row['Users'])+'</p>', unsafe_allow_html=True)
-    st.markdown('<h3>'+str(row['Name'])+'</h3>', unsafe_allow_html=True)
-    st.markdown('<p>'+str(row['Description'])+'</p>', unsafe_allow_html=True)
+    st.markdown('<h3>'+str(row['Naziv'])+'</h3>', unsafe_allow_html=True)
+    st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
     #st.divider()
     #st.write('Government Agency/Organization')
     #st.markdown('<h4>'+str(row['Government Agency/Organization'])+'</h3>', unsafe_allow_html=True)
 
 
     modal = Modal(key="Demo Key", title="Government Agency/Organization")
-    open_modal = st.button("Government Agency/Organization")
+    open_modal = st.button("Ministartvo/Organizacija")
     if open_modal:
         modal.open()
 
