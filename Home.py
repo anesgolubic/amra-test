@@ -73,21 +73,12 @@ for index, row in df.iterrows():
 
     with col4:
         html_string = '''
-                <p>'''+row['Proces aplikacije']+'''</p>
-                <p>'''+row['Lista neophodnih dokumenata']+'''</p>
+                <p>'''+str(row['Proces aplikacije'])+'''</p>
+                <p>'''+str(row['Lista neophodnih dokumenata'])+'''</p>
                 <p>'''+str(row['Vremenski okvir'])+'''</p>
-                <p>'''+row['Dodatne napomene']+'''</p>
+                <p>'''+str(row['Dodatne napomene'])+'''</p>
                 '''
         components.html(html_string)
-        st.link_button("Link za informacije o prijavi", row['Link za informacije o prijavi'])
+        st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
     st.divider()
-
-
-dokumenti = pd.read_excel('Mapping of services.xlsx',sheet_name='Lista potrebnih dokumenata', skiprows = range(1, 8), header = 1)
-
-"""
-## Lista potrebnih dokumenata
-"""
-
-st.dataframe(dokumenti)
