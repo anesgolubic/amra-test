@@ -53,7 +53,7 @@ for index, row in df.iterrows():
     #st.markdown('<h4>'+str(row['Government Agency/Organization'])+'</h3>', unsafe_allow_html=True)
 
 
-    modal = Modal(key="Demo Key", title="Government Agency/Organization")
+    modal = Modal(key=row['Servis'], title="Government Agency/Organization")
     open_modal = st.button("Ministartvo/Organizacija")
     if open_modal:
         modal.open()
