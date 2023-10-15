@@ -23,7 +23,8 @@ with open('style.css')as f:
 ## Neki podnaslov
 """
 
-services = pd.read_excel('Mapping of services.xlsx',sheet_name='Mapiranje usluga')
+services = pd.read_excel('mapiranje_usluga.xlsx',sheet_name='Mapiranje usluga')
+st.write(services)
 services['Servis'] = services['Type of Service/Right/Benefit']
 lista_usluga = services['Servis'].unique()
 useri =  services['Users'].unique()
