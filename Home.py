@@ -77,6 +77,7 @@ for index, row in df.iterrows():
             pass
         else:
             st.write(str(row['Dodatne napomene']))
+
         st.link_button("Link za informacije o prijavi", str(row['Link za informacije o prijavi']))
 
     st.divider()
