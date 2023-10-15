@@ -63,8 +63,6 @@ for index, row in df.iterrows():
         components.html(html_string)
         st.link_button("Website", row['Web stranica'])
 
-
-    with col4:
         m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
         folium.Marker(
             [39.949610, -75.150282], popup="Liberty Bell", tooltip="Liberty Bell"
@@ -72,6 +70,16 @@ for index, row in df.iterrows():
 
         # call to render Folium map in Streamlit
         st_data = st_folium(m, height=350, width=350)
+
+    with col4:
+        html_string = '''
+                <p>'''+row['Proces aplikacije']+'''</p>
+                <p>'''+row['Lista neophodnih dokumenata']+'''</p>
+                <p>'''+row['Vremenski okvir']+'''</p>
+                <p>'''+row['Dodatne napomene']+'''</p>
+                '''
+        components.html(html_string)
+        st.link_button("Link za informacije o prijavi", row['Link za informacije o prijavi'])
 
     st.divider()
 
