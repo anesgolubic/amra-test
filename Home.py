@@ -69,7 +69,6 @@ for index, row in df.iterrows():
         st_data = st_folium(m, height=350, width=350)
 
     with col4:
-        st.components.v1.html(html_string, width=None, height=None, scrolling=False)
         st.write('Proces aplikacije i potrebni dokumenti')
         st.write(str(row['Proces aplikacije']))
         st.write(str(row['Lista neophodnih dokumenata']))
