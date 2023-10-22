@@ -66,7 +66,9 @@ for index,row in dff.iterrows():
             st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
         with tab2:
+            st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
+            st.markdown('<h5>Lista neophodnih dokumenata: </h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Lista neophodnih dokumenata'])+'</p>', unsafe_allow_html=True)
 
         with tab3:
