@@ -56,6 +56,8 @@ for index,row in dff.iterrows():
             st.markdown('<h5>Pravni osnov:</h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
 
+        st.divider()
+
         tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
         with tab1:
             st.header("A cat")
