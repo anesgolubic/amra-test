@@ -26,9 +26,9 @@ df = pd.read_excel('amra_new_file.xlsx')
 st.write(df)
 
 df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
-df.rename(columns={"Tip usluge/prava/benefita": "Usluga"}, inplace=True)
+df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životna_dob"}, inplace=True)
 
-zd = df['Životna dob'].unique()
+zd = df['Životna_dob'].unique()
 usluge = df['Usluga'].unique()
 
 #Filteri
@@ -40,7 +40,7 @@ with col2:
     usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',usluge)
 
 #Filtriranje dataframe-a
-dff = df.query("Životna dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
+dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
 st.write(dff)
 
 
