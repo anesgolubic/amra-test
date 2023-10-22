@@ -44,8 +44,8 @@ dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga
 
 for index,row in dff.iterrows():
     with st.expander(row['Naziv ']):
-        st.markdown('<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Životna_dob'])+'</p>', unsafe_allow_html=True)
         st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
+        st.markdown('<p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin:5px;display:inline;float:left" class="blog-label">'+str(row['Životna_dob'])+'</p>', unsafe_allow_html=True)
         st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
 
         col1, col2 = st.columns([1,3])
