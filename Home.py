@@ -43,7 +43,10 @@ with col2:
 dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
 st.write(dff)
 
-
+for index,row in dff.iterrows():
+    with st.expander(row['Naziv']):
+        st.write(row['Naziv'])
+        st.write(row['Opis'])
 
 #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
