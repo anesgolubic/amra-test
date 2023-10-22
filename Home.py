@@ -24,6 +24,7 @@ with open('style.css')as f:
 
 df = pd.read_excel('amra_new_file.xlsx')
 st.write(df)
+st.write('Test')
 #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
 #useri =  services['Korisnici'].unique()
