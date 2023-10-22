@@ -70,7 +70,7 @@ for index,row in dff.iterrows():
 
         tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
         with tab1:
-            col3, col4 = st.columns([3,1])
+            col3, col4 = st.columns(2)
             with col3:
                 st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
