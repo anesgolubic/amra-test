@@ -45,8 +45,8 @@ lat = 43.853370
 lon = 18.385550
 
 mapa = pd.DataFrame({
-    "lat": 43.853370,
-    "lon": 18.385550
+    "lat": [43.853370],
+    "lon": [18.385550]
 })
 
 #Filtriranje dataframe-a
