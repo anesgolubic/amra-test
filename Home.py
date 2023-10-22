@@ -60,7 +60,7 @@ for index,row in dff.iterrows():
 
         tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
         with tab1:
-            st.markdown('<h5>'+str(row['Ministarstvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
+            st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
             st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
