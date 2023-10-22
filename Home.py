@@ -80,7 +80,7 @@ for index,row in dff.iterrows():
             with col2:
                 st.map(df,
                        latitude='lat',
-                       longitude='lon'
+                       longitude='lon')
         with tab2:
             st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
