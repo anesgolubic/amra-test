@@ -17,13 +17,14 @@ from streamlit_folium import st_folium, folium_static
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
+
+st.image('UNWomen logo.png')
 """
 # Amra test
 ## Neki podnaslov
 """
 
 df = pd.read_excel('amra_new_file.xlsx')
-st.write(df)
 
 df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
 df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životna_dob"}, inplace=True)
