@@ -56,6 +56,15 @@ for index,row in dff.iterrows():
             st.markdown('<h5>Pravni osnov:</h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
 
+        tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
+        with tab1:
+            st.header("A cat")
+
+        with tab2:
+            st.header("A dog")
+
+        with tab3:
+            st.header("An owl")
 
     #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
