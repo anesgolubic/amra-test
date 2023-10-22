@@ -46,8 +46,10 @@ for index,row in dff.iterrows():
     with st.expander(row['Naziv ']):
         st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
         st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
-        st.markdown('<h4>Pravni osnov:</h4>', unsafe_allow_html=True)
+        st.markdown('<h5>Pravni osnov:</h5>', unsafe_allow_html=True)
         st.markdown('<p>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
+        st.markdown('<h5>pravo:</h5>', unsafe_allow_html=True)
+        st.markdown('<p>'+str(row['Pravo'])+'</p>', unsafe_allow_html=True)
 
     #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
