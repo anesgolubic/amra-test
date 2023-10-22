@@ -77,7 +77,7 @@ for index,row in dff.iterrows():
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
             st.map(mapa,
                        latitude='lat',
-                       longitude='lon', zoom=17)
+                       longitude='lon', zoom=17, size=5)
         with tab2:
             st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
