@@ -45,10 +45,10 @@ st.write(dff)
 
 for index,row in dff.iterrows():
     with st.expander(row['Naziv ']):
-        st.write(row['Naziv '])
-        st.write(row['Opis'])
+        st.markdown('<h3>Naziv usluge: <br>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
+        st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
 
-#services['Servis'] = services['Tip usluge/prava/benefita']
+    #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
 #useri =  services['Korisnici'].unique()
 
