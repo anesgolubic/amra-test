@@ -25,6 +25,8 @@ with open('style.css')as f:
 df = pd.read_excel('amra_new_file.xlsx')
 st.write(df)
 
+df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
+
 zd = df['Životna dob'].unique()
 usluge = df['Tip usluge/prava/benefita'].unique()
 
