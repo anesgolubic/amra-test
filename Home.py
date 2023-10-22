@@ -66,10 +66,11 @@ for index,row in dff.iterrows():
             st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
         with tab2:
-            st.header("A dog")
+            st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Lista neophodnih dokumenata'])+'</p>', unsafe_allow_html=True)
 
         with tab3:
-            st.header("An owl")
+            st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
 
     #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
