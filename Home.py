@@ -71,13 +71,13 @@ for index,row in dff.iterrows():
         tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
         with tab1:
             col3, col4 = st.columns([3,1])
-            with col1:
+            with col3:
                 st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
-            with col2:
+            with col4:
                 st.map(mapa,
                        latitude='lat',
                        longitude='lon', use_container_width=True)
