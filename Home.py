@@ -44,6 +44,7 @@ dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga
 st.write(dff)
 
 for index,row in dff.iterrows():
+    st.write(row['Naziv'])
     with st.expander(row['Naziv']):
         st.write(row['Naziv'])
         st.write(row['Opis'])
