@@ -78,7 +78,7 @@ for index,row in dff.iterrows():
                 st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
             with col2:
-                st.map(df,
+                st.map(mapa,
                        latitude='lat',
                        longitude='lon')
         with tab2:
