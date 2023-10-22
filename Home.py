@@ -37,10 +37,11 @@ with col1:
     zivotna_dob = st.selectbox('Odaberite životnu dob:',zd)
 
 with col2:
-    users = st.selectbox('Odaberite Tip usluge/prava/benefita:',usluge)
+    usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',usluge)
 
 #Filtriranje dataframe-a
-dff = df.query()
+dff = df.query("'Životna dob' == "+str(zivotna_dob)+" & 'Usluga' == "+str(usluga))
+st.write(dff)
 
 
 
