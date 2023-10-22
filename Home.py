@@ -24,8 +24,17 @@ with open('style.css')as f:
 
 df = pd.read_excel('amra_new_file.xlsx')
 st.write(df)
+
 zd = df['Životna dob'].unique()
-zivotna_dob = st.selectbox('Odaberite životnu dob:',zd)
+usluge = df['Tip usluge/prava/benefita'].unique()
+
+col1, col2 = st.columns(2)
+with col1:
+    zivotna_dob = st.selectbox('Odaberite životnu dob:',zd)
+
+with col2:
+    users = st.selectbox('Odaberite Tip usluge/prava/benefita:',usluge)
+
 
 #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
