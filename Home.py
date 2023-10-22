@@ -41,12 +41,13 @@ with col2:
 
 #Filtriranje dataframe-a
 dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
-st.write(dff)
 
 for index,row in dff.iterrows():
     with st.expander(row['Naziv ']):
-        st.markdown('<h3>Naziv usluge: <br>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
+        st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
         st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
+        st.markdown('<h4>Pravni osnov:</h4>', unsafe_allow_html=True)
+        st.markdown('<p>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
 
     #services['Servis'] = services['Tip usluge/prava/benefita']
 #lista_usluga = services['Servis'].unique()
