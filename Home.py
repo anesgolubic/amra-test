@@ -40,6 +40,15 @@ with col1:
 with col2:
     usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',usluge)
 
+#Lokacija
+lat = 43.853370
+lon = 18.385550
+
+mapa = pd.DataFrame({
+    "lat": 43.853370,
+    "lon": 18.385550
+})
+
 #Filtriranje dataframe-a
 dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
 
@@ -61,11 +70,17 @@ for index,row in dff.iterrows():
 
         tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
         with tab1:
-            st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
-            st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
-            st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
-            st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
-            st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
+            col3, col4 = st.columns([3,1])
+            with col1:
+                st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
+                st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
+            with col2:
+                st.map(df,
+                       latitude='lat',
+                       longitude='lon'
         with tab2:
             st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
