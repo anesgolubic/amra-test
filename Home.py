@@ -6,6 +6,7 @@ st.set_page_config(
 )
 
 import pandas as pd
+import plotly.express as px
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
 import folium
@@ -47,7 +48,8 @@ with col2:
 lat = 43.853370
 lon = 18.385550
 
-
+data = [[43.853370, 18.385550]]
+map_data = pd.DataFrame(data, columns=['lat', 'lon'])
 
 #Filtriranje dataframe-a
 dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
@@ -75,13 +77,20 @@ for index,row in dff.iterrows():
             st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
-            mapa = pd.DataFrame({
-                "lat": [43.853370],
-                "lon": [18.385550]
-            })
-            st.map(mapa,
-                       latitude='lat',
-                       longitude='lon', zoom=17, size=5)
+
+            fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=17, height=300)
+            fig.update_layout(mapbox_style="open-street-map")
+            fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+            st.plotly_chart(fig, use_container_width=True, config=dict(
+                displayModeBar=False))
+
+            #mapa = pd.DataFrame({
+                #"lat": [43.853370],
+                #"lon": [18.385550]
+            #})
+            #st.map(mapa,
+                       #latitude='lat',
+                       #longitude='lon', zoom=17, size=5)
         with tab2:
             st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
