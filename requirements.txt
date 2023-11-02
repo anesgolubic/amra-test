@@ -5,3 +5,4 @@ openpyxl
 streamlit_modal
 streamlit-folium
 folium
+plotly-express
