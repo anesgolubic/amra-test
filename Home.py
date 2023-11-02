@@ -28,6 +28,9 @@ df = pd.read_excel('amra_new_file.xlsx')
 df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
 df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životna_dob"}, inplace=True)
 
+st.write(df)
+
+
 zd = df['Životna_dob'].unique()
 usluge = df['Usluga'].unique()
 
