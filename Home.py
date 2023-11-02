@@ -78,7 +78,7 @@ for index,row in dff.iterrows():
             st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
-            fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=15, height=300)
+            fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=17, height=300)
             fig.update_layout(mapbox_style="carto-positron")
             fig.update_traces(marker={'size': 15})
             fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
