@@ -47,10 +47,7 @@ with col2:
 lat = 43.853370
 lon = 18.385550
 
-mapa = pd.DataFrame({
-    "lat": [43.853370],
-    "lon": [18.385550]
-})
+
 
 #Filtriranje dataframe-a
 dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
@@ -78,6 +75,10 @@ for index,row in dff.iterrows():
             st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
+            mapa = pd.DataFrame({
+                "lat": [43.853370],
+                "lon": [18.385550]
+            })
             st.map(mapa,
                        latitude='lat',
                        longitude='lon', zoom=17, size=5)
