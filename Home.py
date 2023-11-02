@@ -20,8 +20,7 @@ with open('style.css')as f:
 
 st.image('UNWomen logo.png')
 """
-# Amra test
-## Neki podnaslov
+# Mapa prava i usluga  za osobe sa invaliditetom i starije
 """
 
 df = pd.read_excel('amra_new_file.xlsx')
