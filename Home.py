@@ -30,7 +30,7 @@ df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životn
 
 st.write(df)
 
-df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']] = df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Link za informacije o prijavi','Lista informacija o prijavi','Dodatne napomene']]. fillna('')
+df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']] = df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']]. fillna('')
 
 zd = df['Životna_dob'].unique()
 usluge = df['Usluga'].unique()
