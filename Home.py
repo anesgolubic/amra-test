@@ -48,8 +48,8 @@ with col2:
 lat = 43.853370
 lon = 18.385550
 
-data = [[43.853370, 18.385550]]
-map_data = pd.DataFrame(data, columns=['lat', 'lon'])
+data = [[43.853370, 18.385550, "Zavod zdravstvenog osiguranja Kantona Sarajevo", "Ložionička 2", "Sarajevo"]]
+map_data = pd.DataFrame(data, columns=['lat', 'lon', 'Naziv', 'Adresa', 'Grad'])
 
 #Filtriranje dataframe-a
 dff = df.query("Životna_dob == '"+str(zivotna_dob)+"' & Usluga == '"+str(usluga)+"'")
@@ -78,7 +78,8 @@ for index,row in dff.iterrows():
             st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
-            fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=17, height=300)
+            fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=17, height=300, hover_name="Naziv",
+                                    hover_data=["Adresa","Grad"],)
             fig.update_layout(mapbox_style="carto-positron")
             fig.update_traces(marker={'size': 15})
             fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
