@@ -79,7 +79,7 @@ for index,row in dff.iterrows():
             st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
             fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=17, height=300)
-            fig.update_layout(mapbox_style="open-street-map")
+            fig.update_layout(mapbox_style="basic")
             fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
             st.plotly_chart(fig, use_container_width=True, config=dict(
                 displayModeBar=False))
