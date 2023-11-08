@@ -135,10 +135,13 @@ for index,row in dff.iterrows():
             #latitude='lat',
             #longitude='lon', zoom=17, size=5)
         with tab2:
-            st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
-            st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
-            st.markdown('<h5>Lista neophodnih dokumenata: </h5>', unsafe_allow_html=True)
-            st.markdown('<p>'+str(row['Lista neophodnih dokumenata'])+'</p>', unsafe_allow_html=True)
+            if len(row['Proces aplikacije']) > 0:
+                st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
+            if len(row['Lista neophodnih dokumenata']) > 0:
+                st.markdown('<h5>Lista neophodnih dokumenata: </h5>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Lista neophodnih dokumenata'])+'</p>', unsafe_allow_html=True)
 
         with tab3:
-            st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
+            if len(row['Dodatne napomene']) > 0:
+                st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
