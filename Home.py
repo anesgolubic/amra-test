@@ -56,7 +56,7 @@ for index, row in df.iterrows():
     except:
         pass
 
-zd = list(zd_niz)
+zd = list(set(zd_niz))
 st.write(zd)
 usluge = df['Usluga'].unique()
 st.write(usluge)
