@@ -105,6 +105,7 @@ for index,row in dff.iterrows():
         with col1:
             st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
+            st.write(len(row['Pravni okvir']))
         with col2:
             st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
