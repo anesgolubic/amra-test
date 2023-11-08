@@ -103,12 +103,13 @@ for index,row in dff.iterrows():
 
         col1, col2 = st.columns([1,3])
         with col1:
-            st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
-            st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
-            st.write(len(row['Pravni okvir']))
+            if len(row['Pravni okvir']) > 0:
+                st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
         with col2:
-            st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
-            st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
+            if len(row['Pojašnjenje (Član)']) > 0:
+                st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
 
         st.divider()
 
