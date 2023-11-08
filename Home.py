@@ -91,8 +91,6 @@ else:
     dff = dff.dropna(subset=['Životna_dob2']). \
         loc[dff['Životna_dob2'].apply(lambda x: isinstance(x, list) and zivotna_dob.lower() in x)]
 
-st.write(dff)
-
 dff1 = dff.query("Kategorija == 'Administrativni postupci'")
 if len(dff1) > 0:
     st.subheader('Administrativni postupci')
@@ -227,3 +225,6 @@ if len(dff3) > 0:
                     st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
                     st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
                     st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
+
+if len(dff1) == 0 & len(dff2) == 0 & len(dff3) ==0:
+    st.write('Nema rezultata za odabrane vrijednosti. Izmijenite filtere kako bi dobili rezultate.')
