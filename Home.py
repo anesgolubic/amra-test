@@ -24,7 +24,7 @@ st.image('UNWomen logo.png')
 # Mapa prava i usluga  za osobe sa invaliditetom i starije
 """
 
-df = pd.read_excel('amra_new_file.xlsx')
+df = pd.read_excel('Mapping of services.xlsx', sheet_name='All')
 
 df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
 df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životna_dob"}, inplace=True)
