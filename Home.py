@@ -206,21 +206,22 @@ for index,row in dff2.iterrows():
                 st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
 
 dff3 = dff.query("Kategorija == 'Neinstitucionalizirana prava'")
-st.subheader('Neinstitucionalizirana prava')
-st.write('Ova kategorija obuhvata prava koja su prepoznata u zakonodavstvu, ali nisu institucionalizirana ili ne postoje formalizirani postupci za njihovo ostvarivanje.')
-for index,row in dff3.iterrows():
-    with st.expander(row['Naziv ']):
-        st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
-        st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
-        st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
+if len(dff3) > 0:
+    st.subheader('Neinstitucionalizirana prava')
+    st.write('Ova kategorija obuhvata prava koja su prepoznata u zakonodavstvu, ali nisu institucionalizirana ili ne postoje formalizirani postupci za njihovo ostvarivanje.')
+    for index,row in dff3.iterrows():
+        with st.expander(row['Naziv ']):
+            st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
+            st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
 
-        col1, col2 = st.columns(2)
-        with col1:
-            if len(row['Pravni okvir']) > 0:
-                st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
-                st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
-        with col2:
-            if len(row['Pojašnjenje (Član)']) > 0:
-                st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
-                st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
-                st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
+            col1, col2 = st.columns(2)
+            with col1:
+                if len(row['Pravni okvir']) > 0:
+                    st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
+                    st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
+            with col2:
+                if len(row['Pojašnjenje (Član)']) > 0:
+                    st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
+                    st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
+                    st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
