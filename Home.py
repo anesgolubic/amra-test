@@ -73,7 +73,7 @@ st.write(usluge)
 #Filteri
 col1, col2 = st.columns(2)
 with col1:
-    zivotna_dob = st.selectbox('Odaberite životnu dob:',options=zd,placeholder='Izaberi neku od opcija', index=len(zd))
+    zivotna_dob = st.selectbox('Odaberite životnu dob:',options=zd,placeholder='Izaberi neku od opcija', index=5)
 
 with col2:
-    usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',options=usluge,placeholder='Izaberi neku od opcija', index=len(usluge))
+    usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',options=usluge,placeholder='Izaberi neku od opcija', index=8)
