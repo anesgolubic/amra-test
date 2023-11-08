@@ -95,7 +95,6 @@ if zivotna_dob == 'Sve':
     pass
 else:
     #dff2 = dff[dff['Životna_dob2'].apply(lambda x: zivotna_dob.lower() in x)]
-    dff2 = dff.dropna(subset=['Životna_dob2']). \
+    dff = dff.dropna(subset=['Životna_dob2']). \
         loc[dff['Životna_dob2'].apply(lambda x: isinstance(x, list) and zivotna_dob in x)]
 st.write(dff)
-st.write(dff2)
