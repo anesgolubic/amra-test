@@ -93,7 +93,7 @@ else:
 
 st.write(dff)
 
-dff1 = dff.query("Kategorija = 'Administrativni postupci'")
+dff1 = dff.query("Kategorija == 'Administrativni postupci'")
 
 st.subheader('Administrativni postupci')
 st.write('Ova kategorija obuhvata prava i usluge za osobe s invaliditetom koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svakog podnositelja zahtjeva.')
