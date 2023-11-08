@@ -88,7 +88,7 @@ map_data = pd.DataFrame(data, columns=['lat', 'lon', 'Naziv', 'Adresa', 'Grad'])
 #Filtriranje dataframe-a
 if usluga == 'Sve':
     dff = df
-else
+else:
     dff = df.query("Usluga == '"+str(zivotna_dob))
 
 if zivotna_dob == 'Sve':
