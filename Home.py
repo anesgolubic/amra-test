@@ -32,5 +32,13 @@ st.write(df1)
 st.write(df2)
 st.write(df3)
 
-df = pd.merge(df1,df2)
+#list dataframe you want to append
+frame = [df1, df2, df3]
+
+#new dataframe to store append result
+df = pd.DataFrame()
+
+for a in frame:
+    df = df.append(a)
+
 st.write(df)
