@@ -45,9 +45,6 @@ df['Životna_dob2'] = df['Životna_dob2'].str.split('; ')
 
 df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']] = df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']]. fillna('')
 
-
-st.write(df)
-
 zd_niz = []
 for index, row in df.iterrows():
     try:
@@ -64,11 +61,9 @@ for x in zd1:
     zd.append(a)
 zd.append('Sve')
 
-st.write(zd)
 usluge = list(set(df['Usluga'].unique()))
 usluge.append('Sve')
 
-st.write(usluge)
 
 #Filteri
 col1, col2 = st.columns(2)
@@ -97,4 +92,53 @@ else:
     #dff2 = dff[dff['Životna_dob2'].apply(lambda x: zivotna_dob.lower() in x)]
     dff = dff.dropna(subset=['Životna_dob2']). \
         loc[dff['Životna_dob2'].apply(lambda x: isinstance(x, list) and zivotna_dob.lower() in x)]
+
 st.write(dff)
+
+for index,row in dff.iterrows():
+    with st.expander(row['Naziv ']):
+        st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
+        st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Životna_dob'])+'</p>', unsafe_allow_html=True)
+        st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
+
+        col1, col2 = st.columns([1,3])
+        with col1:
+            st.markdown('<h5>Pravo:</h5>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Pravo'])+'</p>', unsafe_allow_html=True)
+        with col2:
+            st.markdown('<h5>Pravni osnov:</h5>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
+
+        st.divider()
+
+        tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
+        with tab1:
+            st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
+            st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
+
+            fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=17, height=300, hover_name="Naziv",
+                                    hover_data=["Adresa","Grad"],)
+            fig.update_layout(mapbox_style="carto-positron")
+            fig.update_traces(marker={'size': 15})
+            fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+            st.plotly_chart(fig, use_container_width=True, config=dict(
+                displayModeBar=False))
+
+            #mapa = pd.DataFrame({
+            #"lat": [43.853370],
+            #"lon": [18.385550]
+            #})
+            #st.map(mapa,
+            #latitude='lat',
+            #longitude='lon', zoom=17, size=5)
+        with tab2:
+            st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
+            st.markdown('<h5>Lista neophodnih dokumenata: </h5>', unsafe_allow_html=True)
+            st.markdown('<p>'+str(row['Lista neophodnih dokumenata'])+'</p>', unsafe_allow_html=True)
+
+        with tab3:
+            st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
