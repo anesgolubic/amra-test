@@ -42,7 +42,9 @@ df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životn
 
 df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']] = df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']]. fillna('')
 
-df['Životna_dob2'] = df['Životna_dob'].str.split(';')
+df['Životna_dob2'] = df['Životna_dob'].str.lower()
+df['Životna_dob2'] = df['Životna_dob2'].str.split('; ')
+
 st.write(df)
 
 
