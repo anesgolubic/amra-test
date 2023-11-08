@@ -59,19 +59,17 @@ zd = []
 for x in zd1:
     a = x[0].upper()+x[1:]
     zd.append(a)
-zd.append('Sve')
 
 usluge = list(set(df['Usluga'].unique()))
-usluge.append('Sve')
 
 
 #Filteri
 col1, col2 = st.columns(2)
 with col1:
-    zivotna_dob = st.selectbox('Odaberite životnu dob:',options=zd,placeholder='Izaberi neku od opcija', index=5)
+    zivotna_dob = st.selectbox('Odaberite životnu dob:',options=zd,placeholder='Izaberi neku od opcija')
 
 with col2:
-    usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',options=usluge,placeholder='Izaberi neku od opcija', index=8)
+    usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',options=usluge,placeholder='Izaberi neku od opcija')
 
 #Lokacija
 lat = 43.853370
