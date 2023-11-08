@@ -92,8 +92,9 @@ else:
     dff = df.query("Usluga == '"+str(usluga)+"'")
 
 if zivotna_dob == 'Sve':
-    dff = dff
+    pass
 else:
-    dff = dff[dff['Životna_dob2'].apply(lambda x: zivotna_dob in x)]
+    dff2 = dff[dff['Životna_dob2'].apply(lambda x: zivotna_dob in x)]
 
 st.write(dff)
+st.write(dff2)
