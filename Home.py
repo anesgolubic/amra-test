@@ -98,8 +98,7 @@ st.write(dff)
 for index,row in dff.iterrows():
     with st.expander(row['Naziv ']):
         st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
-        a = str(row['Životna_dob2'])[0].upper()+str(row['Životna_dob2'])[1:]
-        st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(a)+'</p>', unsafe_allow_html=True)
+        st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
         st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
 
         col1, col2 = st.columns([1,3])
