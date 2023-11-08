@@ -62,12 +62,12 @@ zd = []
 for x in zd1:
     a = x[0].upper()+x[1:]
     zd.append(a)
+zd.append('Sve')
 
 st.write(zd)
+usluge = list(set(df['Usluga'].unique()))
+usluge.append('Sve')
 
-
-st.write(zd)
-usluge = df['Usluga'].unique()
 st.write(usluge)
 
 #Filteri
