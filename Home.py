@@ -24,6 +24,7 @@ st.image('UNWomen logo.png')
 # Mapa prava i usluga  za osobe sa invaliditetom i starije
 """
 
+#Import podataka
 df1 = pd.read_excel('Mapping of services.xlsx', sheet_name='Administrativni postupci')
 df1['Kategorija'] = 'Administrativni postupci'
 df2 = pd.read_excel('Mapping of services.xlsx', sheet_name='Diskrecione usluge')
@@ -31,17 +32,21 @@ df2['Kategorija'] = 'Diskrecione usluge'
 df3 = pd.read_excel('Mapping of services.xlsx', sheet_name='Neinstitucionalizirana prava')
 df3['Kategorija'] = 'Neinstitucionalizirana prava'
 
-st.write(df1)
-st.write(df2)
-st.write(df3)
-
+#Spajanje u jedan dataframe
 df = pd.concat([df1,df2,df3], ignore_index=True)
 st.write(df)
 
+#Transformacije
 df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
 df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životna_dob"}, inplace=True)
 
 df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']] = df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']]. fillna('')
+
+df['Životna_dob2'] = df['Životna_dob'].str.split(',')
+st.write(df)
+
+
+
 
 zd = df['Životna_dob'].unique()
 usluge = df['Usluga'].unique()
