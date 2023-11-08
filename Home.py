@@ -20,7 +20,7 @@ with open('style.css')as f:
 
 
 st.image('UNWomen logo.png')
-st.image('Sweden_logotype_Bosnia.png', width='100')
+st.image('Sweden_logotype_Bosnia.png', width='100px')
 """
 # Mapa prava i usluga  za osobe sa invaliditetom i starije
 """
