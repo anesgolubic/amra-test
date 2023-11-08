@@ -99,7 +99,7 @@ for index,row in dff.iterrows():
         st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
         st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
 
-        col1, col2 = st.columns([1,3])
+        col1, col2 = st.columns(2)
         with col1:
             if len(row['Pravni okvir']) > 0:
                 st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
