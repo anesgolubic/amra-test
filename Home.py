@@ -48,10 +48,15 @@ df['Životna_dob2'] = df['Životna_dob2'].str.split('; ')
 
 st.write(df)
 
+zd_niz = []
+for index, row in df.iterrows():
+    try:
+        for x in row['Životna_dob2']:
+            zd_niz.append(x)
+    except:
+        pass
 
-
-
-zd = df['Životna_dob2'].unique()
+zd = list(zd_niz)
 st.write(zd)
 usluge = df['Usluga'].unique()
 st.write(usluge)
