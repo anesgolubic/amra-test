@@ -37,3 +37,19 @@ st.write(df3)
 
 df = pd.concat([df1,df2,df3], ignore_index=True)
 st.write(df)
+
+df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
+df.rename(columns={"Tip usluge/prava/benefita": "Usluga","Životna dob":"Životna_dob"}, inplace=True)
+
+df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']] = df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email','Pravni osnov','Proces aplikacije','Lista neophodnih dokumenata','Link za informacije o prijavi','Dodatne napomene']]. fillna('')
+
+zd = df['Životna_dob'].unique()
+usluge = df['Usluga'].unique()
+
+#Filteri
+col1, col2 = st.columns(2)
+with col1:
+    zivotna_dob = st.selectbox('Odaberite životnu dob:',zd)
+
+with col2:
+    usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',usluge)
