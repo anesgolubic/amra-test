@@ -31,3 +31,6 @@ df3 = pd.read_excel('Mapping of services.xlsx', sheet_name='Neinstitucionalizira
 st.write(df1)
 st.write(df2)
 st.write(df3)
+
+df = pd.merge(df1,df2)
+st.write(df)
