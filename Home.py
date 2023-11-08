@@ -25,8 +25,11 @@ st.image('UNWomen logo.png')
 """
 
 df1 = pd.read_excel('Mapping of services.xlsx', sheet_name='Administrativni postupci')
+df1['Kategorija'] = 'Administrativni postupci'
 df2 = pd.read_excel('Mapping of services.xlsx', sheet_name='Diskrecione usluge')
+df2['Kategorija'] = 'Diskrecione usluge'
 df3 = pd.read_excel('Mapping of services.xlsx', sheet_name='Neinstitucionalizirana prava')
+df3['Kategorija'] = 'Neinstitucionalizirana prava'
 
 st.write(df1)
 st.write(df2)
