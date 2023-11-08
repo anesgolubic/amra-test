@@ -34,7 +34,6 @@ df3['Kategorija'] = 'Neinstitucionalizirana prava'
 
 #Spajanje u jedan dataframe
 df = pd.concat([df1,df2,df3], ignore_index=True)
-st.write(df)
 
 #Transformacije
 df['Tip usluge/prava/benefita'] = df['Tip usluge/prava/benefita'].fillna('Nepoznato')
@@ -45,13 +44,17 @@ df[['Opis','Ministartvo/Organizacija','Adresa','Web stranica','Telefon','Email',
 df['Životna_dob2'] = df['Životna_dob'].str.lower()
 df['Životna_dob2'] = df['Životna_dob2'].str.split('; ')
 
+
+
 st.write(df)
 
 
 
 
 zd = df['Životna_dob'].unique()
+st.write(zd)
 usluge = df['Usluga'].unique()
+st.write(usluge)
 
 #Filteri
 col1, col2 = st.columns(2)
