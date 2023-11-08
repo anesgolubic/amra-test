@@ -89,7 +89,7 @@ map_data = pd.DataFrame(data, columns=['lat', 'lon', 'Naziv', 'Adresa', 'Grad'])
 if usluga == 'Sve':
     dff = df
 else:
-    dff = df.query("Usluga == '"+str(zivotna_dob))
+    dff = df.query("Usluga == '"+str(zivotna_dob)+"'")
 
 if zivotna_dob == 'Sve':
     dff = dff
