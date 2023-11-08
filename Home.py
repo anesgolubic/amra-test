@@ -23,7 +23,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     st.image('UNWomen logo.png')
 with col3:
-    st.image('Sweden_logotype_Bosnia.png')
+    st.image('Sweden_logotype_Bosnia.png', width=70)
 """
 # Mapa prava i usluga  za osobe sa invaliditetom i starije
 """
