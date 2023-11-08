@@ -94,7 +94,7 @@ else:
 if zivotna_dob == 'Sve':
     pass
 else:
-    dff2 = dff[dff['Životna_dob2'].apply(lambda x: zivotna_dob in x)]
+    dff2 = dff[dff['Životna_dob2'].apply(lambda x: zivotna_dob.lower() in x)]
 
 st.write(dff)
 st.write(dff2)
