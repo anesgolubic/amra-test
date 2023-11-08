@@ -19,8 +19,11 @@ with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
 
-st.image('UNWomen logo.png')
-st.image('Sweden_logotype_Bosnia.png', width='100px')
+col1, col2, col3 = st.columns(3)
+with col1:
+    st.image('UNWomen logo.png')
+with col3:
+    st.image('Sweden_logotype_Bosnia.png')
 """
 # Mapa prava i usluga  za osobe sa invaliditetom i starije
 """
