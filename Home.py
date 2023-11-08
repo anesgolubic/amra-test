@@ -51,7 +51,7 @@ st.write(df)
 
 
 
-zd = df['Životna_dob'].unique()
+zd = df['Životna_dob2'].unique()
 st.write(zd)
 usluge = df['Usluga'].unique()
 st.write(usluge)
