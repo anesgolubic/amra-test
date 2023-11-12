@@ -75,13 +75,6 @@ with col1:
 with col2:
     usluga = st.selectbox('Odaberite Tip usluge/prava/benefita:',options=usluge,placeholder='Izaberi neku od opcija', index=2)
 
-#Lokacija
-lat = 43.853370
-lon = 18.385550
-
-data = [[43.853370, 18.385550, "Zavod zdravstvenog osiguranja Kantona Sarajevo", "Ložionička 2", "Sarajevo"]]
-map_data = pd.DataFrame(data, columns=['lat', 'lon', 'Naziv', 'Adresa', 'Grad'])
-
 #Filtriranje dataframe-a
 if usluga == 'Sve':
     dff = df
