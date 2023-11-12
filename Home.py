@@ -96,6 +96,7 @@ else:
         loc[dff['Životna_dob2'].apply(lambda x: isinstance(x, list) and zivotna_dob.lower() in x)]
 
 dff1 = dff.query("Kategorija == 'Administrativni postupci'")
+st.write(len(dff1))
 if len(dff1) > 0:
     st.subheader('Administrativni postupci')
     st.write('Ova kategorija obuhvata prava i usluge za osobe s invaliditetom koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svakog podnositelja zahtjeva.')
@@ -153,6 +154,7 @@ if len(dff1) > 0:
                     st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
 
 dff2 = dff.query("Kategorija == 'Diskrecione usluge'")
+st.write(len(dff2))
 if len(dff2) > 0:
     st.subheader('Diskrecione usluge')
     st.write('Ova kategorija obuhvata usluge za osobe s invaliditetom koja ovise o diskrecijskim odlukama određenih osoba i institucija ili faktora. Procedura može varirati, a u nekim slučajevima nisu precizno definirani svi potrebni dokumenti.')
@@ -210,6 +212,7 @@ if len(dff2) > 0:
                     st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
 
 dff3 = dff.query("Kategorija == 'Neinstitucionalizirana prava'")
+st.write(len(dff3))
 if len(dff3) > 0:
     st.subheader('Neinstitucionalizirana prava')
     st.write('Ova kategorija obuhvata prava koja su prepoznata u zakonodavstvu, ali nisu institucionalizirana ili ne postoje formalizirani postupci za njihovo ostvarivanje.')
@@ -230,5 +233,5 @@ if len(dff3) > 0:
                     st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
                     st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
 
-if len(dff1) == 0 & len(dff2) == 0 & len(dff3) ==0:
+if (len(dff1) == 0 & len(dff2) == 0 & len(dff3) ==0):
     st.write('Nema rezultata za odabrane vrijednosti. Izmijenite filtere kako bi dobili rezultate.')
