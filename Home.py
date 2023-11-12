@@ -121,7 +121,7 @@ if len(dff1) > 0:
 
                 if row['Lat'] > 0:
                     fig = px.scatter_mapbox(dff1.iloc[[i]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Ministartvo/Organizacija",
-                                            hover_data={'latitude':False, 'longitude':False,["Adresa"]})
+                                            hover_data={'latitude':False, 'longitude':False, 'Adresa':True})
                     fig.update_layout(mapbox_style="carto-positron")
                     fig.update_traces(marker={'size': 15})
                     fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
