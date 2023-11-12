@@ -96,10 +96,12 @@ else:
         loc[dff['Životna_dob2'].apply(lambda x: isinstance(x, list) and zivotna_dob.lower() in x)]
 
 dff1 = dff.query("Kategorija == 'Administrativni postupci'")
+st.write(dff1)
 if len(dff1) > 0:
     st.subheader('Administrativni postupci')
     st.write('Ova kategorija obuhvata prava i usluge za osobe s invaliditetom koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svakog podnositelja zahtjeva.')
     for index,row in dff1.iterrows():
+        st.write(row)
         with st.expander(row['Naziv ']):
             st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
             st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
