@@ -128,7 +128,7 @@ if len(dff1) > 0:
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
                 st.write(dff1.iloc[[0]])
-                fig = px.scatter_mapbox(dff1.iloc[[index]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Institucija",
+                fig = px.scatter_mapbox(dff1.iloc[[0]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Institucija",
                                         hover_data=["Adresa"])
                 fig.update_layout(mapbox_style="carto-positron")
                 fig.update_traces(marker={'size': 15})
