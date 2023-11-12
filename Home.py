@@ -96,7 +96,6 @@ else:
         loc[dff['Životna_dob2'].apply(lambda x: isinstance(x, list) and zivotna_dob.lower() in x)]
 
 dff1 = dff.query("Kategorija == 'Administrativni postupci'")
-st.write(dff1)
 i = 0
 if len(dff1) > 0:
     st.subheader('Administrativni postupci')
@@ -128,8 +127,6 @@ if len(dff1) > 0:
                 st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
-
-                st.write(dff1.iloc[[i]])
                 if row['Lat'] > 0:
                     fig = px.scatter_mapbox(dff1.iloc[[i]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Ministartvo/Organizacija",
                                             hover_data=["Adresa"])
@@ -185,7 +182,6 @@ if len(dff2) > 0:
                 st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
-                st.write(dff2.iloc[[j]])
                 if row['Lat'] > 0:
                     fig = px.scatter_mapbox(dff2.iloc[[j]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Ministartvo/Organizacija",
                                             hover_data=["Adresa"])
