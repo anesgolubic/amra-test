@@ -142,13 +142,6 @@ if len(dff1) > 0:
                 else:
                     i += 1
 
-                #mapa = pd.DataFrame({
-                #"lat": [43.853370],
-                #"lon": [18.385550]
-                #})
-                #st.map(mapa,
-                #latitude='lat',
-                #longitude='lon', zoom=17, size=5)
             with tab2:
                 if len(row['Proces aplikacije']) > 0:
                     st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
@@ -162,6 +155,7 @@ if len(dff1) > 0:
                     st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
 
 dff2 = dff.query("Kategorija == 'Diskrecione usluge'")
+j = 0
 if len(dff2) > 0:
     st.subheader('Diskrecione usluge')
     st.write('Ova kategorija obuhvata usluge za osobe s invaliditetom koja ovise o diskrecijskim odlukama određenih osoba i institucija ili faktora. Procedura može varirati, a u nekim slučajevima nisu precizno definirani svi potrebni dokumenti.')
@@ -191,21 +185,19 @@ if len(dff2) > 0:
                 st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
-                fig = px.scatter_mapbox(map_data, lat="lat", lon="lon", zoom=17, height=300, hover_name="Naziv",
-                                        hover_data=["Adresa","Grad"],)
-                fig.update_layout(mapbox_style="carto-positron")
-                fig.update_traces(marker={'size': 15})
-                fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-                st.plotly_chart(fig, use_container_width=True, config=dict(
-                    displayModeBar=False))
+                st.write(dff2.iloc[[j]])
+                if row['Lat'] > 0:
+                    fig = px.scatter_mapbox(dff2.iloc[[i]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Institucija",
+                                            hover_data=["Adresa"])
+                    fig.update_layout(mapbox_style="carto-positron")
+                    fig.update_traces(marker={'size': 15})
+                    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+                    st.plotly_chart(fig, use_container_width=True, config=dict(
+                        displayModeBar=False))
+                    j += 1
+                else:
+                    j += 1
 
-                #mapa = pd.DataFrame({
-                #"lat": [43.853370],
-                #"lon": [18.385550]
-                #})
-                #st.map(mapa,
-                #latitude='lat',
-                #longitude='lon', zoom=17, size=5)
             with tab2:
                 if len(row['Proces aplikacije']) > 0:
                     st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
