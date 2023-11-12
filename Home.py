@@ -97,6 +97,7 @@ else:
 
 dff1 = dff.query("Kategorija == 'Administrativni postupci'")
 st.write(dff1)
+i = 0
 if len(dff1) > 0:
     st.subheader('Administrativni postupci')
     st.write('Ova kategorija obuhvata prava i usluge za osobe s invaliditetom koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svakog podnositelja zahtjeva.')
@@ -127,14 +128,19 @@ if len(dff1) > 0:
                 st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
-                st.write(dff1.iloc[[0]])
-                fig = px.scatter_mapbox(dff1.iloc[[0]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Institucija",
-                                        hover_data=["Adresa"])
-                fig.update_layout(mapbox_style="carto-positron")
-                fig.update_traces(marker={'size': 15})
-                fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-                st.plotly_chart(fig, use_container_width=True, config=dict(
-                    displayModeBar=False))
+
+                st.write(dff1.iloc[[i]])
+                if row['Lat'] > 0:
+                    fig = px.scatter_mapbox(dff1.iloc[[i]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Institucija",
+                                            hover_data=["Adresa"])
+                    fig.update_layout(mapbox_style="carto-positron")
+                    fig.update_traces(marker={'size': 15})
+                    fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+                    st.plotly_chart(fig, use_container_width=True, config=dict(
+                        displayModeBar=False))
+                    i += 1
+                else:
+                    i += 1
 
                 #mapa = pd.DataFrame({
                 #"lat": [43.853370],
