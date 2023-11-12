@@ -187,7 +187,7 @@ if len(dff2) > 0:
 
                 st.write(dff2.iloc[[j]])
                 if row['Lat'] > 0:
-                    fig = px.scatter_mapbox(dff2.iloc[[i]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Institucija",
+                    fig = px.scatter_mapbox(dff2.iloc[[j]], lat="Lat", lon="Lon", zoom=17, height=300, hover_name="Institucija",
                                             hover_data=["Adresa"])
                     fig.update_layout(mapbox_style="carto-positron")
                     fig.update_traces(marker={'size': 15})
