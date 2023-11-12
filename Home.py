@@ -101,7 +101,7 @@ if len(dff1) > 0:
     st.subheader('Administrativni postupci')
     st.write('Ova kategorija obuhvata prava i usluge za osobe s invaliditetom koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svakog podnositelja zahtjeva.')
     for index,row in dff1.iterrows():
-        st.write(row)
+        st.write(index)
         with st.expander(row['Naziv ']):
             st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
             st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
@@ -127,7 +127,7 @@ if len(dff1) > 0:
                 st.markdown('<p>'+str(row['Telefon'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Email'])+'</p>', unsafe_allow_html=True)
 
-                fig = px.scatter_mapbox(row, lat=row["Lat"], lon=row["Lon"], zoom=17, height=300, #hover_name="Institucija",
+                fig = px.scatter_mapbox(row, lat="Lat", lon="Lon", zoom=17, height=300, #hover_name="Institucija",
                                         #hover_data=["Adresa"]
                                         )
                 fig.update_layout(mapbox_style="carto-positron")
