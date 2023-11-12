@@ -233,5 +233,5 @@ if len(dff3) > 0:
                     st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
                     st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
 
-if ((len(dff1) == 0) AND (len(dff2) == 0) AND (len(dff3) ==0)):
+if ((len(dff1) == 0) and (len(dff2) == 0) and (len(dff3) ==0)):
     st.write('Nema rezultata za odabrane vrijednosti. Izmijenite filtere kako bi dobili rezultate.')
