@@ -113,15 +113,15 @@ if len(dff1) > 0:
             st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
 
-            col1, col2 = st.columns(2)
-            with col1:
-                if len(row['Pravni okvir']) > 0:
-                    st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
-                    st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
-            with col2:
-                if len(row['Pojašnjenje (Član)']) > 0:
-                    st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
-                    st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
+            #col1, col2 = st.columns(2)
+            #with col1:
+                #if len(row['Pravni okvir']) > 0:
+                    #st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
+                    #st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
+            #with col2:
+                #if len(row['Pojašnjenje (Član)']) > 0:
+                    #st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
+                    #st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
 
             st.divider()
 
@@ -170,20 +170,23 @@ if len(dff2) > 0:
             st.markdown('<p style="margin-top:10px;display:inline;float:left" class="blog-label">'+str(row['Usluga'])+'</p><p style="margin-left:5px;margin-top:10px;display:inline;float:left" class="blog-label">'+str(zivotna_dob)+'</p>', unsafe_allow_html=True)
             st.markdown('<p>'+str(row['Opis'])+'</p>', unsafe_allow_html=True)
 
-            col1, col2 = st.columns(2)
-            with col1:
-                if len(row['Pravni okvir']) > 0:
-                    st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
-                    st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
-            with col2:
-                if len(row['Pojašnjenje (Član)']) > 0:
-                    st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
-                    st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
+            #col1, col2 = st.columns(2)
+            #with col1:
+                #if len(row['Pravni okvir']) > 0:
+                    #st.markdown('<h5>Pravni okvir:</h5>', unsafe_allow_html=True)
+                    #st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
+           #with col2:
+                #if len(row['Pojašnjenje (Član)']) > 0:
+                    #st.markdown('<h5>Pojašnjenje (Član):</h5>', unsafe_allow_html=True)
+                    #st.markdown('<p>'+str(row['Pojašnjenje (Član)'])+'</p>', unsafe_allow_html=True)
 
             st.divider()
 
-            tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
+            tab1, tab2, tab3, tab4 = st.tabs(["Pravni osnov!","Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
             with tab1:
+                st.markdown('<p>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
+
+            with tab2:
                 st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
@@ -202,7 +205,7 @@ if len(dff2) > 0:
                 else:
                     j += 1
 
-            with tab2:
+            with tab3:
                 if len(row['Proces aplikacije']) > 0:
                     st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
                     st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
@@ -210,7 +213,7 @@ if len(dff2) > 0:
                     st.markdown('<h5>Lista neophodnih dokumenata: </h5>', unsafe_allow_html=True)
                     st.markdown('<p>'+str(row['Lista neophodnih dokumenata'])+'</p>', unsafe_allow_html=True)
 
-            with tab3:
+            with tab4:
                 if len(row['Dodatne napomene']) > 0:
                     st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
 
