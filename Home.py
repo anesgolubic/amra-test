@@ -87,6 +87,7 @@ with col1:
 with col2:
     usluga = st.selectbox('Odaberite tip usluge/prava:',options=usluge,placeholder='Izaberi neku od opcija', index=2)
 
+st.write(df)
 
 #Filtriranje dataframe-a
 if usluga == 'Sve':
@@ -124,8 +125,10 @@ if len(dff1) > 0:
 
             st.divider()
 
-            tab1, tab2, tab3 = st.tabs(["Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
+            tab1, tab2, tab3, tab4 = st.tabs(["Pravni osnov!","Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
             with tab1:
+                st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
+            with tab2:
                 st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
                 st.markdown('<a href="+'+str(row['Web stranica'])+'">'+str(row['Web stranica'])+'</a>', unsafe_allow_html=True)
@@ -144,7 +147,7 @@ if len(dff1) > 0:
                 else:
                     i += 1
 
-            with tab2:
+            with tab3:
                 if len(row['Proces aplikacije']) > 0:
                     st.markdown('<h5>Proces aplikacije: </h5>', unsafe_allow_html=True)
                     st.markdown('<p>'+str(row['Proces aplikacije'])+'</p>', unsafe_allow_html=True)
@@ -152,7 +155,7 @@ if len(dff1) > 0:
                     st.markdown('<h5>Lista neophodnih dokumenata: </h5>', unsafe_allow_html=True)
                     st.markdown('<p>'+str(row['Lista neophodnih dokumenata'])+'</p>', unsafe_allow_html=True)
 
-            with tab3:
+            with tab4:
                 if len(row['Dodatne napomene']) > 0:
                     st.markdown('<p>'+str(row['Dodatne napomene'])+'</p>', unsafe_allow_html=True)
 
