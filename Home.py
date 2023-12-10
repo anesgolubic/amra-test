@@ -75,7 +75,7 @@ for x in zd1:
     zd.append(a)
 
 usluge = list(set(df['Usluga'].unique()))
-
+usluge = ['Novorođenče','Predškolska dob','Školska dob','Radni vijek','Treća životna dob']
 
 #Filteri
 col1, col2 = st.columns(2)
@@ -85,7 +85,6 @@ with col1:
 with col2:
     usluga = st.selectbox('Odaberite tip usluge/prava:',options=usluge,placeholder='Izaberi neku od opcija', index=2)
 
-st.write(usluge.sort())
 
 #Filtriranje dataframe-a
 if usluga == 'Sve':
