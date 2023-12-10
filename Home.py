@@ -127,7 +127,7 @@ if len(dff1) > 0:
 
             tab1, tab2, tab3, tab4 = st.tabs(["Pravni osnov!","Ministarstvo/Organizacija", "Proces aplikacije", "Dodatne napomene"])
             with tab1:
-                st.markdown('<p>'+str(row['Pravni okvir'])+'</p>', unsafe_allow_html=True)
+                st.markdown('<p>'+str(row['Pravni osnov'])+'</p>', unsafe_allow_html=True)
             with tab2:
                 st.markdown('<h5>'+str(row['Ministartvo/Organizacija'])+'</h5>', unsafe_allow_html=True)
                 st.markdown('<p>'+str(row['Adresa'])+'</p>', unsafe_allow_html=True)
