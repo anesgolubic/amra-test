@@ -76,7 +76,7 @@ for x in zd1:
     zd.append(a)
 
 usluge = list(set(df['Usluga'].unique()))
-zd = ['Novorođenče','Predškolska dob','Školska dob','Radni vijek','Treća životna dob']
+zd = ['Predškolska dob','Školska dob','Radni vijek','Treća životna dob']
 usluge = ['Zdravstvena zaštita','Socijalna zaštita','Obrazovanje','Poreske olakšice','Prevoz i kretanje','Telekomunikacije','Zaštita civilnih žrtava rata','Ostalo']
 
 #Filteri
