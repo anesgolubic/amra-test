@@ -1,6 +1,6 @@
 import streamlit as st
 st.set_page_config(
-    page_title="Amra test",
+    page_title="Prava i usluge za osobe sa invaliditetom, osobe treće životne dobi i njihove porodice u Kantonu Sarajevo",
     #page_icon="🧊",
     layout="wide",
 )
@@ -39,11 +39,12 @@ st.write('Prikaz je je razvijen u decembru 2023. godine, za potrebe UN Women, fi
 
 
 #Import podataka
-df1 = pd.read_excel('Mapping of services.xlsx', sheet_name='Administrativni postupci')
+#df1 = pd.read_excel('Mapping of services.xlsx', sheet_name='Administrativni postupci')
+df1 = pd.read_excel('D3a_Mapa prava i usluga_BOS.xlsx', sheet_name='Administrativni postupci')
 df1['Kategorija'] = 'Administrativni postupci'
-df2 = pd.read_excel('Mapping of services.xlsx', sheet_name='Diskrecione usluge')
+df2 = pd.read_excel('D3a_Mapa prava i usluga_BOS.xlsx', sheet_name='Diskrecione usluge')
 df2['Kategorija'] = 'Diskrecione usluge'
-df3 = pd.read_excel('Mapping of services.xlsx', sheet_name='Neinstitucionalizirana prava')
+df3 = pd.read_excel('D3a_Mapa prava i usluga_BOS.xlsx', sheet_name='Neinstitucionalizirana prava')
 df3['Kategorija'] = 'Neinstitucionalizirana prava'
 
 #Spajanje u jedan dataframe
