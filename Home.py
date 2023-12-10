@@ -94,7 +94,7 @@ if len(dff1) > 0:
     st.subheader('Administrativni postupci')
     st.write('Ovdje možete dobiti pregled prava i usluga, za osobe sa invaliditetom, osobe treće životne dobi i njihove porodice u Kantonu Sarajevo. Ovaj pregled je rezultat potrebe identificirane kroz Polaznu studiju o ekonomiji brige i njege u Bosni i Hercegovini iz 2023., naručene od strane UN Women, a finansirane od strane ambasade Švedske.')
     st.write('Cilj ovog projekta je kroz transparentno informiranje o pravima i uslugama, doprinijeti ekonomskom osnaživanju, prvenstveno korisnica i njegovateljica osoba sa invaliditetom, ali i svih osoba koje imaju navedene potrebe a posebno naših sugrađana i sugrađanki treće životne dobi. Prikaz nudi informacije o pravima i uslugama razvrstane u tri kategorije:')
-    tab1, tab2, tab3 = st.tabs(3)
+    tab1, tab2, tab3 = st.tabs(["Administrativni postupci", "Diskrecione usluge", "Neinstitucionalizirana prava"])
     with tab1:
         st.write('Administrativni postupci - Ova kategorija obuhvata prava i usluge koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svaku podnositeljicu ili podnositelja zahtjeva.')
     with tab2:
