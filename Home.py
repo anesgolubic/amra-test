@@ -85,7 +85,7 @@ with col1:
 with col2:
     usluga = st.selectbox('Odaberite tip usluge/prava:',options=usluge,placeholder='Izaberi neku od opcija', index=2)
 
-st.write(usluge)
+st.write(usluge.sort())
 
 #Filtriranje dataframe-a
 if usluga == 'Sve':
