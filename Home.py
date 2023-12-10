@@ -27,6 +27,16 @@ with open('style.css')as f:
 """
 # Prava i usluge za osobe sa invaliditetom, osobe treće životne dobi i njihove porodice u Kantonu Sarajevo
 """
+st.write('Cilj ovog projekta je kroz transparentno informiranje o pravima i uslugama, doprinijeti ekonomskom osnaživanju, prvenstveno korisnica i njegovateljica osoba sa invaliditetom, ali i svih osoba koje imaju navedene potrebe a posebno naših sugrađana i sugrađanki treće životne dobi. Prikaz nudi informacije o pravima i uslugama razvrstane u tri kategorije:')
+tab1, tab2, tab3 = st.tabs(["Administrativni postupci", "Diskrecione usluge", "Neinstitucionalizirana prava"])
+with tab1:
+    st.write('Administrativni postupci - Ova kategorija obuhvata prava i usluge koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svaku podnositeljicu ili podnositelja zahtjeva.')
+with tab2:
+    st.write('Diskrecione usluge - Ova kategorija obuhvata usluge koja ovise o odlukama određenih osoba na pozicijama unutar institucija ili su uslovljene varijabilnim faktora kao što je visina planiranog budžet. Procedura može varirati prema mjestu boravka, a u nekim slučajevima nemoguće je identificirati listu potrebnih dokumenata za ostvarivanje prava.')
+with tab3:
+    st.write('Neinstitucionalizirana prava - Ova kategorija obuhvata prava koja su prepoznata u zakonodavstvu, ali nisu institucionalizirana ili ne postoje formalizirani postupci za njihovo ostvarivanje.')
+st.write('Prikaz je je razvijen u decembru 2023. godine, za potrebe UN Women, finansiran od strane ambasade Švedske, te je stavljen na raspolaganje Vladi Kantona Sarajevo. UN Women ne snosi odgovornost za ispravnost informacija na ovom materijalu nakon decembra 2023. godine. Obzirom na ograničenja po pitanju dostupnosti informacija i učestalih izmjena propisa, posebno u pogledu diskrecionih usluga, ova mapa se ne treba smatrati konačnom. ')
+
 
 #Import podataka
 df1 = pd.read_excel('Mapping of services.xlsx', sheet_name='Administrativni postupci')
@@ -93,15 +103,6 @@ i = 0
 if len(dff1) > 0:
     st.subheader('Administrativni postupci')
     st.write('Ovdje možete dobiti pregled prava i usluga, za osobe sa invaliditetom, osobe treće životne dobi i njihove porodice u Kantonu Sarajevo. Ovaj pregled je rezultat potrebe identificirane kroz Polaznu studiju o ekonomiji brige i njege u Bosni i Hercegovini iz 2023., naručene od strane UN Women, a finansirane od strane ambasade Švedske.')
-    st.write('Cilj ovog projekta je kroz transparentno informiranje o pravima i uslugama, doprinijeti ekonomskom osnaživanju, prvenstveno korisnica i njegovateljica osoba sa invaliditetom, ali i svih osoba koje imaju navedene potrebe a posebno naših sugrađana i sugrađanki treće životne dobi. Prikaz nudi informacije o pravima i uslugama razvrstane u tri kategorije:')
-    tab1, tab2, tab3 = st.tabs(["Administrativni postupci", "Diskrecione usluge", "Neinstitucionalizirana prava"])
-    with tab1:
-        st.write('Administrativni postupci - Ova kategorija obuhvata prava i usluge koje su jasno definirane u zakonu i propisima, te su institucionalizirane putem administrativnih postupaka. Procedura za ostvarivanje ovih prava je precizno navedena, uključujući popis potrebnih dokumenata i očekivani ishod za svaku podnositeljicu ili podnositelja zahtjeva.')
-    with tab2:
-        st.write('Diskrecione usluge - Ova kategorija obuhvata usluge koja ovise o odlukama određenih osoba na pozicijama unutar institucija ili su uslovljene varijabilnim faktora kao što je visina planiranog budžet. Procedura može varirati prema mjestu boravka, a u nekim slučajevima nemoguće je identificirati listu potrebnih dokumenata za ostvarivanje prava.')
-    with tab3:
-        st.write('Neinstitucionalizirana prava - Ova kategorija obuhvata prava koja su prepoznata u zakonodavstvu, ali nisu institucionalizirana ili ne postoje formalizirani postupci za njihovo ostvarivanje.')
-    st.write('Prikaz je je razvijen u decembru 2023. godine, za potrebe UN Women, finansiran od strane ambasade Švedske, te je stavljen na raspolaganje Vladi Kantona Sarajevo. UN Women ne snosi odgovornost za ispravnost informacija na ovom materijalu nakon decembra 2023. godine. Obzirom na ograničenja po pitanju dostupnosti informacija i učestalih izmjena propisa, posebno u pogledu diskrecionih usluga, ova mapa se ne treba smatrati konačnom. ')
     for index,row in dff1.iterrows():
         with st.expander(row['Naziv ']):
             st.markdown('<h3>'+str(row['Naziv '])+'</h3>', unsafe_allow_html=True)
