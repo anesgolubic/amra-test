@@ -77,7 +77,7 @@ for x in zd1:
 
 usluge = list(set(df['Usluga'].unique()))
 zd = ['Predškolska dob','Školska dob','Radni vijek','Treća životna dob']
-usluge = ['Zdravstvena zaštita','Socijalna zaštita','Obrazovanje','Poreske olakšice','Prevoz i kretanje','Telekomunikacije','Zaštita civilnih žrtava rata','Ostalo']
+usluge = ['Zdravstvena zaštita','Socijalna zaštita','Obrazovanje','Poreske olakšice','Prevoz i kretanje','Telekomunikacije','Penziono osiguranje','Ostalo']
 
 #Filteri
 col1, col2 = st.columns(2)
